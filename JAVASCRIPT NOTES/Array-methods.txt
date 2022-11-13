@@ -1,0 +1,630 @@
+-----------------------------------------------------------------Array Methods-------------------------------------------------------------------------------
+
+
+very impotent  ! point  ---> //  you can change the Array because Array is mutable;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                               Multidimensional Array
+                               
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let a  = [
+
+["Nitesh" , 21 , "Male" , "Bca"],
+["Neeraj" ,19 ,"Male" ,"M.a"],
+["Dimple" ,21 ,"Female" ,"B.a"],
+["Neha" ,22, "Female" ,"M.a"]
+
+]
+
+
+// for(let i = 0; i<a.length; i++){
+    //     console.log(a[i])
+
+    // }    
+    
+
+    // console.log(a[2][1])
+    // console.table(a)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. length;
+
+example:
+
+let Array = [44,32,44,3,32,14,100]
+let length = Array.length;
+console.log(length)
+
+
+<----- It is used to get a length of Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+2. toString() 
+
+example:
+
+let  num = [55, 554, 22, 22, 3]
+let method = num.toString()
+console.log(method)
+
+
+<--- It is used to convert an Array  into a string;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. join(",") , join("_") , join("and")
+
+example:
+
+let  num = [55, 554, 22, 22, 3]
+let method = num.join("and")
+console.log(method)
+
+
+
+<--- It is used to join all the array  element using separator; ! and it return a string
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. pop()  
+
+example:
+
+
+let  num = [55, 554, 22, 22, 3]
+let method = num.pop()
+console.log(method,num)
+
+<--- It is used to pop out the last element of an original Array ! and also pop return the popped element; ! and it modify the original array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. push()  
+
+example:
+
+let  num = [55, 554, 22, 22, 3]
+let method = num.push(55)
+console.log(method,num)
+
+
+<--- It is used to pour out the element in last of an original Array ! and also push return  the new Array length; ! and it modify the original array;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+6. shift() 
+
+example:
+
+let  num = [55, 554, 22, 22, 3]
+let method = num.shift()
+console.log(method,num)
+
+
+<--- It is used to pop out the first element of first line of an original Array ! and also shift return the new Array length; ! and it
+
+modify the original array;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. unshift() 
+
+example:
+
+let  num = [55, 554, 22, 22, 3]
+let method = num.unshift(1)
+console.log(method,num)
+
+
+<--- It is used to pour out the  first element of first line of an original Array ! and also unshift return  the new Array length; ! and it modify the
+
+original array;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+8. delete num[0]     
+
+example:
+
+let  num = [55, 554, 22, 22, 3]
+delete num[0]
+console.log(num)
+
+
+
+<--- It is used to delete the first element of an array with the help of index number ! and it doesn't changes Array length; ! and it is an operator not a
+
+Method;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+9. concat()
+
+example:
+
+let num = [55, 554, 22, 22, 3]
+let sum = [1, 2, 20, 32, 0]
+let cum = [550, 5054, 022, 922, 873]
+let method = num.concat(sum,cum)
+console.log(method)
+
+
+<- It is used to add one more than one Array together; ! and it doesn't changes the original Array ! but it return a new Array;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+10. sort() 
+
+example:
+
+let num = [55, 554, 22, 22, 3]
+let method = num.sort()
+console.log(method)
+
+<--- It is used to sort  original Array into a  alphabetically ! and it modify an original Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. sort() 
+
+
+let compare = (a , b)=> {
+    return a - b
+}
+
+let num = [5, 4, 922, 9, 3];
+let method = num.sort(compare)
+console.log(method)
+
+
+<--- It is used to sort ascending and descending order an  original  Array ! and it modify an original Array; ! and it takes a
+
+function to performs;
+
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+                           
+11. reverse()
+
+example:
+
+let num = [5, 4, 922, 9, 3];
+let method = num.reverse()
+console.log(method)
+
+<--- It is used to reverse  an original Array;  ! and it modify an original Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+12. splice(2,3,44,55,55)
+
+example:
+
+let num = [5, 4, 922, 9, 3];
+num.splice(1,2,44,4444444,44444444444)
+console.log(num)
+
+
+<--- It is used to remove and add an element in an  Array; ! it takes 3 arguments first where to start how many remove and how many add to an Array; ! and it
+
+returns deleted values ; ! and it modify an original Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+13. slice(2) / slice(2,6)
+
+1 example:
+
+
+let num = [5, 4, 922, 9, 3];
+let method = num.slice(2)
+console.log(method)
+
+
+
+
+2 example:
+
+let num = [5, 4, 922, 9, 3,5,44,3333];
+let method = num.slice(2,6)
+console.log(method)
+
+
+
+<--- It is used to create a  new Array it takes index number of an  element and then it will give you 1 index to 4 index numbers element it doesn't take last
+
+index numbers; ! and it doesn't change an  original Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+14. new Array() 
+
+
+example:
+
+let conn = new Array();
+conn[0] = 55
+conn[1] = 56
+conn[2] = 57
+conn[3] = 58
+console.log(conn)
+
+
+
+<--- It is used to create An Array without given a element; if you want to assign a value later in Array so use this Method;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+15. isArray()   
+
+example:
+
+let num = [5, 4, 922, 9, 3,5,44,3333];
+let sum = 55;
+let cum = "nitesh"
+let method = Array.isArray(num)
+console.log(method)
+
+
+
+<--- It used to check a variable in an Array or not; if it will true means variable is an Array or if will false so it's means variable isn't Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+16. IndexOf()
+
+1 example:
+
+let num = ["Nitesh","Dimple","Nitesh","Neha","Raju","priya"]
+let method = num.indexOf("Nitesh")
+console.log(method)
+
+
+
+
+2 example:
+
+let num = ["Nitesh","Dimple","Nitesh","Neha","Raju","priya"]
+let method = num.indexOf("Nitesh",2)
+console.log(method)
+
+
+<---(It is used to get index number of an element in an Array; ! and it returns -1 if element is not an Array; !and it is a
+
+case sensitive;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17. lastIndexOf()
+
+1 example:
+
+let num = ["Nitesh","Dimple","Nitesh","Neha","Nitesh","Raju","priya"]
+let method = num.lastIndexOf("Nitesh")
+console.log(method)
+
+
+
+
+2 example:
+
+let num = ["Nitesh","Dimple","Nitesh","Neha","Nitesh","Raju","priya"]
+let method = num.lastIndexOf("Nitesh",3)
+console.log(method)
+
+
+<---(It is used to get index number of an element in an Array; ! and it returns -1 if element is not an Array; ! and it's starts last index number ! and it
+
+is a case sensitive;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+18. includes()
+
+example:
+
+let num = ["Nitesh","Dimple","Nitesh","Neha","Nitesh","Raju","priya"]
+let method = num.includes("Neha")
+console.log(method)
+
+
+<---(It is used to search an element in an Array; ! and it's return  a true and false as result; ! and it also a case sensitive;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. some()
+
+example:
+
+let condition = (num)=>{
+ return  num >= 18
+}
+
+let num = [5, 4, 90, 3, 5, 4, 10];
+let method = num.some(condition)
+console.log(method)
+
+
+
+<---(It is used to check the condition whether the condition is true of false in an Array ; and it check an Array every value who is greater than 18. if it
+
+get a only one value to match a result so it will true  it doesn't mater to the rest of the numbers whether is small or big ; ! and it's return a true and
+
+false as result; ! and it takes a function to performs otherwise it doesn't works;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+20. every() 
+
+example:
+
+
+let condition = (num)=>{
+ return  num >= 18
+}
+
+let num = [50, 40, 90, 30, 50, 40, 100];
+let method = num.every(condition)
+console.log(method)
+
+
+<---(It is used to check the condition whether the condition is true of false in an Array ; and it check an Array every value who is greater than 18. if
+
+every values is greater than  18  it will give you true otherwise it will return false  ! and it takes a function to performs otherwise it doesn't works;
+
+ 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+21. find() 
+
+example:
+
+let condition = (num)=>{
+ return  num >= 18
+}
+
+let num = [5, 4, 7, 30, 50, 40, 100];
+let method = num.find(condition)
+console.log(method)
+
+
+
+<---(It is used to check the condition in an Array ; this method returns the value of the first element in an array that pass a test:
+
+for example if any number that is greater than 18 and which comes first in array; ! and it takes a function to performs otherwise it doesn't works;
+
+
+
+
+ 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+22. findIndex() 
+
+example:
+
+
+let condition = (num)=>{
+ return  num >= 18
+}
+
+let num = [5, 4, 7, 30, 5, 4, 1];
+let method = num.findIndex(condition)
+console.log(method)
+
+
+
+<---(It is used to check the condition in an Array ; this method returns the index  of the first element in an array that pass a test:
+
+for example if any number that is greater than 18 and which comes first in array; ! and it takes a function to performs otherwise it doesn't works;
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                
+                                                         HIGHER ORDER ARRAY METHODS
+                          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1.map()
+
+1 example:
+
+let num = [5, 4, 7, 30, 5, 4, 1];
+
+num.map((value, index, Array) => {
+    console.log(value, index, Array)
+});
+
+
+2 example:
+
+let num = [5, 4, 7, 30, 5, 4, 1];
+
+let method = num.map((value, index, Array) => {
+    console.log(value, index, Array)
+    return value * 2
+})
+console.log(method)
+
+
+
+<---(It is used to print  an  element serial wise in an Array ; and it return a new array; ! and this method can take 3 arguments value , index , array;
+
+! and it doesn't change original Array;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+2.fillter()
+
+example:
+
+let num = [50, 4, 70, 30, 5, 4, 10];
+
+let method = num.filter((value) => {
+    return value<=10 
+})
+console.log(method)
+
+
+<---(It is used to print an element with the help of condition  in an Array ; and it return a new array; ! it return only which is less than 10 values 
+
+according to condition; ! and it doesn't change original Array; ! and this method can take 3 arguments value , index , array;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3.reduce()
+
+example:
+
+let num = [1, 2, 3, 4, 5, 6, 7];
+
+let method = num.reduce((a,b)=>{
+    return a + b
+})
+console.log(method)
+
+
+<---(It is used to print an element with the help of condition  in an Array ; and it return a new array; ! it return value according to condition;
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                                                              USE LOOP IN AN ARRAY
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. for loop 
+
+example:
+
+let num = [1, 2, 3, 4, 5, 6, 7];
+for (let i = 0; i < num.length; i++) {
+    console.log(num[i])
+}
+
+
+<---(It is used to print an element with the help of for loop in an Array;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. forEach
+
+example:
+
+let num = [1, 2, 3, 4, 5, 6, 7];
+num.forEach((element) => {
+    console.log(element * element)
+})
+
+
+<---(It is used to print an element with the help of forEach loop in an Array; !and It calls a function once for each;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Array.from
+
+example:
+
+let fname = "nitesh"
+let loop = Array.from(fname)
+console.log(loop)
+
+
+<---(It is used to create an array from any other object with the help of Array.from;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. for of
+
+example:
+
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for(let i of num){
+    console.log(i)
+}
+
+
+<---(It is used to print an element with the help of for of loop in an Array; !and It is a short cut of for loop;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. for in 
+
+example:
+
+let num = [1, 5, 3, 4, 5, 6, 7, 8, 9]
+for (let i in num) {
+    console.log(num[i])
+}
+
+
+<---(It is used to print an element with the help of for in loop in an Array; !and It is a short cut of for loop;

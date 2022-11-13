@@ -1,0 +1,235 @@
+-----------------------------------------------------------------Objects and Dom Methods------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+1. let a  = Object.keys(marks)                <----- It is used to get a key values in an objects;
+
+2. let a  = Object.values(marks)            <----- It is used to get a values  in an objects;
+
+3. let a  = Object.entries(marks)           <----- It is used to get entries a in an objects;
+
+
+example:
+
+
+ let marks = {
+    andy: 55,
+    rose: 84,
+    juliana: [44, 44, 44],
+    mandy: 80
+
+}
+
+
+print a marks with the help of loop
+
+for(let i = 0; i < Object.keys(marks).length; i++){
+   console.log(Object.keys(marks)[i] + " marks are " + marks[Object.keys(marks)[i]])
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.    document.body.firstChild                  <----- It is used to get a firstChild of an element;
+
+5.    document.body.lastChild                  <----- It is used to get a lastChild of an element;
+
+6.    document.body.childNodes             <----- It is used to get list of  childNodes of an element;
+
+7.    document.body.firstElementChild     <----- It is used to get a firstChild  of an element;
+
+8.    document.body.children                    <----- It is used to get children of an element;
+
+
+example:
+
+    let b = document.body
+
+    it gives an Elements and text nodes together
+    console.log("first child of b is", b.firstChild)
+    
+
+    it only gives an Elements
+    console.log("first child of b is", b.firstElementChild)
+    console.log("first child of b is", b.children)
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+                                                                        Dom  (Document Object Model)
+
+ 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.  getElementById                                   <----- It is used to get id of any html element;
+  
+
+example:
+
+
+let hot  = document.getElementById("hot")
+hot.style.background = "red"
+console.log(hot)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.  getElementsByClassName                                  <----- It is used to get class of any html element;
+  
+
+example:
+
+
+let hat =  document.getElementsByClassName("hat")[0]
+hat.style.fontSize = "50px"
+hat.style.background = "red"
+console.log(hat)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.  getElementsByTagName                                 <----- It is used to get tag of any html element;
+                                                                                               for example li, a , h1
+  
+example:
+
+
+
+let tag  = document.getElementsByTagName("li")
+tag[1].style.fontSize = "40px"
+tag[2].style.fontSize = "40px"
+tag[3].style.fontSize = "40px"
+tag[4].style.fontSize = "40px"
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.  getElementsByName                            <----- It is used to get  by  name  of  input , button  html element;
+                                                                                   for example input = " name = "fname"
+  
+
+example:
+
+
+let name =  document.getElementsByName("fname")
+name[0].style.background = "red"
+name[1].style.background = "white"
+console.log(name)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5.  querySelectorAll                              <----- It is used to get all id , class and element in html;
+  
+
+example:
+
+
+let get = document.querySelectorAll("#get")
+get[0].style.fontSize = "50px"
+get[0].style.color = "red"
+console.log(get)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6.  querySelector                             <----- It is used to get id , class and element in html;
+  
+
+example:
+
+
+let b = document.querySelector(".first")
+b.style.fontSize = "30px"
+b.style.color = "red"
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.   matches                          <----- It is used to check ;
+  
+
+example:
+
+
+
+let id1 = document.getElementById("id1")
+console.log(id1.matches(".box"))
+console.log(id1.matches(".fuck"))
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8.  closest                             <----- It is used to;
+  
+
+example:
+
+
+let id1 = document.getElementById("id1")
+console.log(span1.closest(".box"))
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8.  contains                             <----- It is used to;
+  
+
+example:
+
+
+let span1 = document.getElementById("span1")
+let id1 = document.getElementById("id1")
+console.log(id1.contains(span1))
+console.log(span1.contains(span1))
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. innerHTML                                           <----- It is used to change an html of an element; !and it is valid for
+                                                                              elements nodes only;
+
+example:
+
+
+let id = document.getElementById("first")
+id.innerHTML = "fuck you all"
+console.log(id.innerHTML)
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. outerHTML                                           <----- It is used to change an outerhtml of an element; for example
+                                                                              you can also change an element liek h1 to h3
+
+example:
+
+
+let id = document.getElementById("first")
+id.outerHTML = "<h3>hell ji my name is randy</h3>"
+console.log(id.outerHTML)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11.                                           <----- It is used to change an outerhtml of an element; for 
+                                                                                example  you can also change an element liek h1 to h3
+
+example:
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------

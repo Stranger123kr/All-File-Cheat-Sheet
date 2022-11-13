@@ -1,0 +1,3 @@
+If   you  want   to  back to  your  default  font  size  of  your   windows so   saveas  your  file inot a 
+
+for example  Default.reg and then click on file and restart your pc now your font has changed

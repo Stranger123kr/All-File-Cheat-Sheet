@@ -1,0 +1,299 @@
+-----------------------------------------------------------------String Methods------------------------------------------------------------------------------
+
+very impotent ! point ---> // you can't change the string because string is immutable ;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1. length  <----- It is used to get a length of String;
+
+example:
+
+let string = "javaScript is a most powerful language"
+let length = string.length;
+console.log(length)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+2. toLowerCase() <--- It is used to convert a String in small case;
+
+example:
+
+let string = "JAVASCRIPT IS A MOST POWERFUL LANGUAGE"
+let lower = string.toLowerCase();
+console.log(lower)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. toUpperCase() <--- It is used to convert a String in big case;
+
+example:
+
+let string = "javaScript is a most powerful language"
+let upper = string.toUpperCase();
+console.log(upper)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. includes() <--- (It is used to search words and characters in string for example -> if  
+
+you want to search your words in strings then it will match exact and then it will give you true otherwise false and it is a case sensitive also);
+
+example:
+
+let string = "javaScript is a most powerful language"
+let includes = string.includes("is");
+console.log(includes)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+5. startsWith()     <--- (It is used to search first words and characters in string for example -> if you want to search your words in strings then it will
+
+match exact and then it will give you true otherwise false and it is a case sensitive also);
+
+example:
+
+let string = "javaScript is a most powerful language"
+let starts = string.startsWith("javaScript");
+console.log(starts)
+
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+6. endsWith() <--- (It is used to search end words and characters in string for example -> if you want to search your words in strings then it will match
+
+exact and then it will give you true otherwise false and it is a case sensitive also);
+
+example:
+
+let string = "javaScript is a most powerful language"
+let ends = string.endsWith("language");
+console.log(ends)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. search() <--- (It is used to search index number of words and characters in string for example -> if you want to search your words in strings then it will
+
+match exact and then it will give you index number of the word and otherwise -1 and it is a case sensitive also);
+
+example:
+
+let string = "javaScript is a most powerful language"
+let search = string.search("is");
+console.log(search)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. match(/is/g)  <--- It is used to get a words and characters in string for example -> this method search every same words and collect together and combine
+
+into an Array;
+
+example:
+
+let string = "javaScript is a most is powerful language"
+let match = string.match(/is/g);
+console.log(match)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+9. IndexOf() <---(It is used to get an  index number of words and characters in string it starts to get a index number of string stating line; 
+
+example:
+
+let string = "javaScript is a most is powerful language"
+let indexOf = string.indexOf("is");
+console.log(indexOf)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+10. lastIndexOf() <---(It is used to get an  index number of words and characters in string it starts to get a index number of string ending line;
+
+example:
+
+let string = "javaScript is a most is powerful language"
+let lastIndexOf = string.lastIndexOf("is");
+console.log(lastIndexOf)
+           
+           
+           
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+11. replace() <--- It is used to replace a words and character for another words and character in a string;
+
+example:
+
+let string = "javaScript is a most is powerful language"
+let replace = string.replace("is", "fuck off");
+console.log(replace)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+      
+      
+11. replace(/is/g) <--- It is used to replace a words and character in string for globally : for example if your have a multiple same words in a string so it
+
+will replace all words and character as  global;
+
+example:
+
+let string = "javaScript is a most  is powerful language"
+let replace = string.replace(/s/g, " fuck off ");
+console.log(replace)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    
+      
+      
+12. trim()    <--- It is used to remove extra spaces right and left in words and character in a string;
+
+example:
+
+
+let string = "    javaScript    "
+let trim = string.trim();
+console.log(trim)
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+13.charAt() <--- It is used to get a  words and character in a string ; (for example if your write 1 index it will give you a value of 1 index 
+
+number and if you give a wrong index position It will return nothing); 
+
+example:
+
+let string = "javaScript is a most  is powerful language"
+let charAt = string.charAt(1);
+console.log(charAt)
+                    
+                    
+                    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------                   
+                    
+                    
+14.charCodeAt() <--- It is used to get a ASCII Value of words and character in a string ; (for example if your write 0 index of word it will give a value of
+
+0 index position word ASCII code and if you give a wrong index position It will return nothing);
+
+example:
+
+let string = "javaScript is a most  is powerful language"
+let charCodeAt = string.charCodeAt(1);
+console.log(charCodeAt)
+                    
+                    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    
+15.String.fromCharCode() <--- It is used to get a ASCII Value of ASCll table with the help of number;
+
+example:
+
+let fromCharCode = String.fromCharCode(2);
+console.log(fromCharCode)
+                    
+                    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+16. concat() <--- It is used to connects all the strings together; 
+
+example:
+
+let string = " javaScript is a most  powerful language "
+let string1 = " react is a power full framework "
+let string2 = " i now htm and css "
+let concat = string.concat(string1,string2);
+console.log(concat)
+                    
+                    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17. split(" ") <--- It is used to break a words and character in string and it return an array;
+
+example:
+
+let string = " javaScript is a most  powerful language "
+let split = string.split("i"); 
+let split = string.split(" ");  
+console.log(split)
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+18. repeat(3) <--- It is used to repeat  a string  many times;
+
+example:
+
+let string = " javaScript is a most  powerful language , "
+let repeat = string.repeat(5);
+console.log(repeat)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+19. slice(3,5) <--- It is used to get  a words and character in string  ; (for example if you write a element index number it will give you a string between
+
+your index number 3 to 5 position string) and convert into a new string and it also take a minus value for example (-1);
+
+example:
+
+let string = "javaScript is a most  powerful language"
+let split = string.slice(3,5);
+console.log(split)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+20. substring(0,5)  <--- It is used to get  a words and character in string  ; (for example if you write a element index number it will give you a string
+
+between your index number 3 to 5 position string and it doesn't count last index position 0 to 5 but it take only 0 to 4) ! and convert into a new string and
+
+it also take a minus value for example (-1);
+
+example:
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+21. toString() <--- It is used to convert a number and other thing into a string;
+
+example:
+
+let string = 100;
+let toString = string.toString();
+console.log(toString)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
