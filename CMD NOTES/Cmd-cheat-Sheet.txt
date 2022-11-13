@@ -110,12 +110,9 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-1. tasklist              
+1. tasklist              <--- It is used to view all task which are running in current; and it help to open an app and other things; for example: if your
 
-
-<--- It is used to view all task which are running in current; and it help to open an app and other things; for example: if your write notepad in cmd;
-
-! and if you want to open third-party application so write;  start  appname
+                              write notepad in cmd; ! and if you want to open third-party application so write;  start  appname;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -201,7 +198,7 @@
  
  5. net user  administrator  /active:yes     <--- it is used to activate your administrator account in your computer;
  
- 6.  net user  administrator  /active:no     <--- it is used to deactivate your administrator account in your computer;
+ 6. net user  administrator  /active:no     <--- it is used to deactivate your administrator account in your computer;
  
  
   !and this method allowed all disable accounts also;
