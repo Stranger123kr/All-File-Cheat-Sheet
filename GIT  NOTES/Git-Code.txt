@@ -9,8 +9,8 @@ this is configuration step if you install git first time in your computer
 
 this is for some additional method
 
-1. q --- if you want to quite a lines press q
-2. git clone link <-- it is use for make a tensorflow type repository in your git repository;
+1. q <--- if you want to quite a lines press q
+2. git clone link  <-- it is use for make a tensorflow type repository in your git repository;
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ this is for some additional method
    
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
   
-3. git add -- a              <--- it used to track and add in you repository;
+3. git add  --a              <--- it used to track and add in you repository;
     
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------    
@@ -53,7 +53,7 @@ this is for some additional method
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------   
     
-7. rm -rf.git                  <--- it is used to delete your repository !danger;
+7. rm -rf .git                  <--- it is used to delete your repository !danger;
       
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -73,13 +73,11 @@ this is for some additional method
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-12. touch   .gitignore      <--- ( gitignore file ignore all file , for example if you want to ignore all log files 
+12. touch   .gitignore      <--- .gitignore file ignore all file , for example if you want to ignore all log files so write *.log in your .gitignore file
 
-so write *.log in your gitignore file then git won't track the all log files); ! sometime .gitignore won't 
-
-work because if file have already track then  .gitigonore won't work  so you have to first untracked you 
-
-files;
+                                  then git won't track the all log files); ! sometime .gitignore won't work because if file have already track then 
+                                   
+                                  .gitigonore won't work  so you have to  first untracked you files;
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -90,7 +88,7 @@ files;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     
-14. git diff --staged            <--- it is used to compare previous working directory to staging area ; 
+14. git diff  --staged            <--- it is used to compare previous working directory to staging area; 
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -124,24 +122,22 @@ files;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
    
-20. git log -p  -2                       <--- it is used to see what type of code and line add and remove in commit; if you write 2,3 ahead of -p it will show
+20. git log -p -2                       <--- it is used to see what type of code and line add and remove in commit; if you write 2,3 ahead of -p it will
 
-only -2 or -3 commit only;
+                                             show only -2 or -3 commit only;
     
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     
-20. git  log  --stat              <--- it is used to see what type of code and line add and remove in commit in a 
-
-short way ; 
+20. git  log  --stat              <--- it is used to see what type of code and line add and remove in commit in a short way ; 
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-21. git log --pretty=oneline                      <--- it   is used to see your commit in one line;
+21. git log --pretty=oneline                      <--- it is used to see your commit in one line;
     
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -152,21 +148,21 @@ short way ;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     
-22. git log since=2.days           <--- it is used to see your commit of last 2 days; if you write month , years a ahead of days it will show you last month
+22. git log --since=2.days           <--- it is used to see your commit of last 2 days; if you write month , years a ahead of days it will show you last 
 
-and years commit;
+                                          month and years commit;
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------         
 23. git log --pretty=format:"%h -- %an"     <--- it is used to see your commit details like author name , author email and more things in one line ; in this
 
-line an means author name you can use ae for author email;
+                                                 line an means author name you can use ae for author email;
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 24. git commit --amend     <--- it is used to change your and other person commit; if you write 24 number line then press i button to commit; (->this is quit
 
-method and then press esc button then : and then wq for quit);
+                                method and then press esc button then : and then wq for quit);
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,13 +177,13 @@ method and then press esc button then : and then wq for quit);
  
  ------------------------------------------------------------------------------------------------------------------------------------------------------------
  
- 27. git checkout  -f                     <--- it is used to back ot  your previous working directory ;
+ 27. git checkout  -f                     <--- it is used to back ot  your previous working directory;
  
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  
- 28. git remote                            <--- it is used to check do you have a remote in git ;
+ 28. git remote                            <--- it is used to check do you have a remote in git;
  
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -199,17 +195,13 @@ method and then press esc button then : and then wq for quit);
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  
- 30. git push -u  origin main      <--- it is used to push you data in github repositroy; !and also use for this
-
- pull your data in github;
+ 30. git push -u  origin main      <--- it is used to push your data in github repositroy; !and also use for this pull your data in github;
  
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  
- 31. git cofig --global  alias.st   status      <--- it is used to convert big command into a short commands;
-
-like git status ->  git st
+ 31. git cofig --global  alias.st   status      <--- it is used to convert big command into a short commands; like git status ->  git st
  
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -230,9 +222,7 @@ like git status ->  git st
  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  
- 35. git  merge  any-branch-name        <--- it is used to merge master branch to another branch like
-
- which branch do you want to add; 
+ 35. git  merge  any-branch-name        <--- it is used to merge master branch to another branch like which branch do you want to add; 
  
  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -273,12 +263,12 @@ like git status ->  git st
 2. topic branches
 
  
-41. git push  origin  BranchName      <--- it is used to push second branch on github; 
+41. git push  origin  BranchName             <--- it is used to push second branch on github; 
  
  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
  
-42. git push -d  origin  BranchName      <--- it is used to delete branch on github; 
+42. git push -d  origin  BranchName           <--- it is used to delete branch on github; 
  
  ------------------------------------------------------------------------------------------------------------------------------------------------------------

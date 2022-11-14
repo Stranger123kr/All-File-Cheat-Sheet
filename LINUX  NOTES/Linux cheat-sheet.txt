@@ -98,7 +98,7 @@
 
 10. chmod                     <--- It is used to change a permission of files , folders and directory; ! if you chage a permission so you have to write 
  
-chmod code filename.txt ;  if you want a code so visit this website for code  https://chmod-calculator.com/;
+                                   chmod code filename.txt ;  if you want a code so visit this website for code  https://chmod-calculator.com/;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 

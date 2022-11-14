@@ -87,7 +87,7 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-11.copy                 <--- It is used to copy files and folders;
+11. copy                 <--- It is used to copy files and folders;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -110,12 +110,9 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-1. tasklist              
+1. tasklist              <--- It is used to view all task which are running in current; and it help to open an app and other things; for example: if your
 
-
-<--- It is used to view all task which are running in current; and it help to open a app and other things; for example: if your write notepad in cmd;
-
-! and if you want to open third-party application so write;  start  appname
+                              write notepad in cmd; ! and if you want to open third-party application so write;  start  appname;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -155,10 +152,6 @@
 
 
 2. wmic cpu           <--- it is used to get cpu information;
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-3. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -205,7 +198,7 @@
  
  5. net user  administrator  /active:yes     <--- it is used to activate your administrator account in your computer;
  
- 6.  net user  administrator  /active:no     <--- it is used to deactivate your administrator account in your computer;
+ 6. net user  administrator  /active:no     <--- it is used to deactivate your administrator account in your computer;
  
  
   !and this method allowed all disable accounts also;
@@ -226,7 +219,7 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  
-1. attrib  +h  +r  +s                        <--- it is used to hide the all file;
+1. attrib  +h  +r  +s                        <--- it is used to hide the all files;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -236,7 +229,7 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-3. attrib  -h  -r  -s                        <--- it is used to unhide the file;
+3. attrib  -h  -r  -s                        <--- it is used to unhide the files;
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,5 +1,3 @@
-If  you  want   to  change   your  default  font  size  of  your  windows  so   write you font  name for 
+If  you  want   to  change   your  default  font  size  of  your  windows  so   write you font  name for example:  "Segoe UI"="Write a name of  you font" and
 
-example:  "Segoe UI"="Write a name of  you font" and then   saveas  your  file inot a for example  
-
-first.reg and then click on file and restart your pc now your font has changed 
+then   saveas  your  file inot a for example  first.reg and then click on file and restart your pc now your font has changed 
