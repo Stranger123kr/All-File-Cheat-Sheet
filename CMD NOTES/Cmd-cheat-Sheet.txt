@@ -20,13 +20,24 @@
 
  ------------------------------------------------------------------------------------------------------------------------------------------------------------
  
- 1. managed-bde -protectors -get drivename:   <--- it is used to check your bitlocker password;
+1. managed-bde -protectors -get drivename:   <--- it is used to check your bitlocker password;
  
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+this is a command set to upgrade you software by cmd 
+
+
+1. winget:                                              <--- it is used to check your software packages , and other things;
  
+2. winget upgrade                              <--- it is used to upgrade your  software packages , and other things
+
+ in latest version;
  
- 
- 
- 
+3. winget upgrade  --all                     <---  it is used to upgrade your all  software packages;
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
