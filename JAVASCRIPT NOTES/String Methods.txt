@@ -97,9 +97,9 @@ console.log(search)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-8. match(/is/g)  <--- It is used to get a words and characters in string for example -> this method search every same words and collect together and combine
+8. match(/is/g)  <--- It is used to get a words and characters in string for example -> this method search every same words and collect together and combine into an Array;
 
-into an Array;
+
 
 example:
 

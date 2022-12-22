@@ -305,7 +305,7 @@ this is a command set to upgrade you software by cmd
 
 this is used for convert a pendrive bootable and it also use for formate a pendrive and other peripherals
 
-now the process is from 1 to 10 lines;
+now the process is from 1 to 9 lines;
 
 
 1. diskpart
@@ -318,15 +318,12 @@ now the process is from 1 to 10 lines;
 
 5. create partition primary
 
-6. select partition 1
+6. select partition  disknumber
 
-7. formate fs=ntfs quick
+7. format  fs=ntfs quick
 
-8. active
+8. exit
 
-9. assign
-
-10 exit
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------

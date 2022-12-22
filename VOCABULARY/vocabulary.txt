@@ -1,0 +1,19 @@
+1 concat - kisi chiz ko sath me jodna |
+
+2 mutable - परिवर्तनशील |
+
+3 immutable - स्थिर |
+
+4 split - विभाजित करना |
+
+5 pop out - बाहर निकालना |
+
+6 Pour out - डालना |
+
+7 splice - जोडना |
+
+8 pick up  - जोडना |
+
+9 put down - जोडना |
+
+10 take off  - जोडना |
