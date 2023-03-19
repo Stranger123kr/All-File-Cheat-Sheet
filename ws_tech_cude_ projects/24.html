@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+      integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: #3498db;
+    }
+    .box {
+      width: 600px;
+      min-height: 500px;
+      background-color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+    #item {
+      width: 100%;
+      height: 2.5rem;
+      text-align: center;
+      font-size: 1rem;
+      display: block;
+      box-shadow: 0rem 0rem 0.2rem black;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+    }
+    #to-do-box,
+    li {
+      position: relative;
+      list-style: none;
+      margin: 2rem 0rem 0rem 0rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      background-color: rosybrown;
+      padding: 0.8rem 0.4rem;
+      box-shadow: 0rem 0rem 0.2rem black;
+      border-radius: 0.5rem;
+      word-wrap: break-word;
+      color: white;
+    }
+    i {
+      position: absolute;
+      top: -1px;
+      right: 4px;
+      color: wheat;
+    }
+    .done {
+      text-decoration: line-through;
+      color: black;
+    }
+  </style>
+  <body>
+    <main>
+      <div class="box">
+        <input type="search" id="item" placeholder="Create To-do" />
+        <ul id="to_do_box"></ul>
+      </div>
+    </main>
+
+    <script>
+      let data = document.getElementById("item");
+      let note = document.getElementById("to_do_box");
+
+      data.addEventListener("keyup", (e) => {
+        if (e.key == "Enter") {
+          add_to_to(data.value);
+          data.value = "";
+        }
+      });
+      const add_to_to = (data) => {
+        let list_item = document.createElement("li");
+        console.log(list_item);
+        list_item.innerHTML = `
+        ${data}
+        <i class="fas fa-times"></i>
+        `;
+        // ------------------------------
+        // this is listener
+        note.append(list_item);
+        list_item.addEventListener("click", () => {
+          list_item.classList.toggle("done");
+          console.log("hello");
+        });
+        // ------------------------------------
+        list_item.querySelector("i").addEventListener("click", () => {
+          list_item.remove();
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skeleton Loading Animation</title>
+  </head>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    body {
+      background: #2b010f;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      text-align: center;
+      color: white;
+    }
+    .card {
+      width: 90%;
+      max-width: 400px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .cover {
+      height: 200px;
+      background-color: #ececec;
+    }
+    .square {
+      width: 80px;
+      height: 80px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+      background: #ececec;
+    }
+    .info {
+      padding: 30px;
+    }
+    .line {
+      height: 30px;
+      background: #ececec;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .cover,
+    .square,
+    .line {
+      background-image: linear-gradient(
+        120deg,
+        #ececec 50%,
+        #fafafa 60%,
+        #fafafa 61%,
+        #ececec 70%
+      );
+      background-size: 200%;
+      background-position: 100% 0;
+      animation: waves 2s linear infinite;
+    }
+    @keyframes waves {
+      100% {
+        background-position: -100% 0;
+      }
+    }
+  </style>
+  <body>
+    <h1>Skeleton Loading Animation</h1>
+    <div class="card">
+      <div class="cover"></div>
+      <div class="info">
+        <div class="square"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </body>
+</html>

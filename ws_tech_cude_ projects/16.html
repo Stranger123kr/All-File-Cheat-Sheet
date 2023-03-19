@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CountDown Timer</title>
+  </head>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url(/project/items/images/background.png);
+      background-size: cover;
+      padding: 0 8%;
+      position: relative;
+    }
+    .logo {
+      width: 120px;
+      padding: 20px 0;
+      cursor: pointer;
+    }
+    .content {
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      color: #fff;
+    }
+    .content h1 {
+      font-size: 4rem;
+      font-weight: 800;
+    }
+    .content h1 span {
+      color: #ff3755;
+      cursor: pointer;
+    }
+    .content p {
+      font-size: 1.2rem;
+      font-weight: bolder;
+      margin-bottom: 0.5rem;
+      color: red;
+    }
+    .content button {
+      margin-top: 1rem;
+      padding: 1rem 1rem 1rem 1rem;
+      font-size: 1rem;
+      font-weight: 800;
+      background: transparent;
+      box-shadow: 0rem 0rem 0.2rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .launch_time {
+      display: flex;
+    }
+    .launch_time div {
+      flex-basis: 110px;
+    }
+    .launch_time p {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+    .launch_time span {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+    .rocket {
+      width: 250px;
+      position: absolute;
+      right: 10%;
+      bottom: 0;
+      animation: rocket_launch 2s linear infinite;
+    }
+    @keyframes rocket_launch {
+      0% {
+        bottom: 0%;
+        opacity: 0;
+      }
+      50% {
+        bottom: 50%;
+        opacity: 3;
+      }
+      75% {
+        bottom: 70%;
+        opacity: 4;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 5;
+      }
+    }
+  </style>
+  <body>
+    <!-- <h1>CountDown Timer</h1> -->
+    <div class="container">
+      <img src="/project/items/images/logo.png" class="logo" />
+      <div class="content">
+        <p>Website is Under Maintaining</p>
+        <h1>Rocket Will <span>Launch</span> Soon</h1>
+        <div class="launch_time">
+          <div>
+            <p class="Timer">00</p>
+            <span>Days</span>
+          </div>
+          <div>
+            <p class="Timer">00</p>
+            <span>Hours</span>
+          </div>
+          <div>
+            <p class="Timer">00</p>
+            <span>Minutes</span>
+          </div>
+          <div>
+            <p class="Timer">00</p>
+            <span>Seconds</span>
+          </div>
+        </div>
+        <button type="button">Learn More ▶</button>
+      </div>
+      <img src="/project/items/images/rocket.png" class="rocket" />
+    </div>
+    <script>
+      let Timer = document.getElementsByClassName("Timer");
+      let head = document.getElementsByTagName("h1")[0];
+      let button = document.getElementsByTagName("button")[0];
+      let count_down = new Date("Mar 31, 2023 00:00:00").getTime();
+      // -----------------------------------------------------------------
+
+      let Rocket_launch = () => {
+        let now = new Date().getTime();
+        let distance = count_down - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        Timer[0].innerHTML = days;
+        Timer[1].innerHTML = hours;
+        Timer[2].innerHTML = minutes;
+        Timer[3].innerHTML = seconds;
+        if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+          head.innerHTML = "Rocket Has Been <span>Launched</span>";
+          clearInterval(stop_launch);
+        }
+      };
+      let stop_launch = setInterval(Rocket_launch, 1000);
+      button.addEventListener("click", () => {
+        location.href = "https://www.isro.gov.in/Launchers.html";
+      });
+    </script>
+  </body>
+</html>

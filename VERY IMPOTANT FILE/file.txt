@@ -1,5 +1,6 @@
 ------------------------------------------------------------This is a vs code  best extensions---------------------------------------------------------------
                                                                 
+0. Mobile simulator - responsive testing tool  - (It  is use for check a responsiveness of website);
 
 1.  BlackBox:----->(This is a pre-build code generator);
 

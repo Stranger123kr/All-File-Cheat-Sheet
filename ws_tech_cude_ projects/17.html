@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+    .main {
+      width: 100%;
+      height: 100vh;
+      background: url("/project/items/1802071.webp") center center;
+      background-size: cover;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .title {
+      margin-top: 10px;
+      color: white;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .col {
+      margin-top: 20px;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    .col div {
+      width: 250px;
+      text-align: center;
+    }
+
+    input {
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-color: transparent;
+      border-radius: 5px;
+      height: 50px;
+      text-align: center;
+      font-size: 30px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="overlay">
+        <div class="title">We are coming soon</div>
+        <div class="title" id="end-date">20 March 2023 10:00 PM</div>
+        <div class="col">
+          <div>
+            <input type="text" readonly value="0" />
+            <br />
+            <label for="">Days</label>
+          </div>
+          <div>
+            <input type="text" readonly value="0" />
+            <br />
+            <label for="">Hours</label>
+          </div>
+          <div>
+            <input type="text" readonly value="0" />
+            <br />
+            <label for="">Minutes</label>
+          </div>
+          <div>
+            <input type="text" readonly value="0" />
+            <br />
+            <label for="">Seconds</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let input = document.getElementsByTagName("input");
+      //   ------------------------------------------------------------
+
+      let clock = () => {
+        let end = new Date("Mar 12,2023 00:00:00").getTime();
+        let now = new Date().getTime();
+
+        let distance = end - now;
+        // ------------------------------------------------
+        let Days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let Hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let Minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let Seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        input[0].value = Days;
+        input[1].value = Hours;
+        input[2].value = Minutes;
+        input[3].value = Seconds;
+      };
+      setInterval(clock, 1000);
+    </script>
+  </body>
+</html>

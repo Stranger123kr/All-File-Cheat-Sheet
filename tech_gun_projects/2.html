@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word_Counter</title>
+  </head>
+  <style>
+    body {
+      padding: 50px 100px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      background-color: rgb(183, 183, 255);
+    }
+    h1 {
+      font-size: 5rem;
+      text-align: center;
+      position: relative;
+      bottom: 7rem;
+    }
+    p {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      position: relative;
+      bottom: 8rem;
+    }
+    #textbox {
+      position: relative;
+      left: 16.5rem;
+      bottom: 8rem;
+    }
+  </style>
+  <h1>Word and Character Counter</h1>
+  <p>
+    <span id="word">0</span> words and <span id="character">0</span> character
+  </p>
+  <textarea id="textbox" cols="80" rows="20"></textarea>
+  <script>
+    const textbox = document.getElementById("textbox");
+    const character = document.getElementById("character");
+    const word = document.getElementById("word");
+    // ----------------------------------------------
+    textbox.addEventListener("input", () => {
+      let text = textbox.value;
+
+      //   -----------------------------------------
+
+      let New_character = text.length;
+      character.innerText = New_character;
+      // ----------------------------------------------
+
+      //   text = text.trim();
+      let New_word = text.split(" ");
+      let cleanList = New_word.filter((elm) => {
+        return elm != "";
+      });
+      word.innerText = cleanList.length;
+    });
+  </script>
+</html>

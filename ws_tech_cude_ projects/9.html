@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      color: white;
+      background-color: #000000;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 5rem;
+    }
+    img {
+      width: 16rem;
+      height: 16rem;
+    }
+    div input {
+      display: none;
+    }
+    div label {
+      display: block;
+      position: relative;
+      top: 2rem;
+      left: 41rem;
+      width: 4.5rem;
+      height: 2.7rem;
+      background-color: #00acee;
+      transition: all 300ms linear;
+      border-radius: 5rem;
+      box-shadow: 0rem 0rem 0.2rem;
+    }
+    div label::before {
+      content: "";
+      box-shadow: 0rem 0rem 0.2rem;
+      display: block;
+      position: relative;
+      top: 0.2rem;
+      left: 0.3rem;
+      width: 2.3rem;
+      height: 2.3rem;
+      background-color: white;
+      border-radius: 3rem;
+      transition: all 300ms linear;
+    }
+    div input:checked + label {
+      background: orange;
+    }
+    div input:checked + label::before {
+      transform: translateX(78%);
+    }
+  </style>
+  <body>
+    <h1>Bulb Turn on & off</h1>
+    <h1 id="off">Bulb Is Off</h1>
+
+    <main>
+      <figure>
+        <img src="/project/items/off.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/project/items/off.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/project/items/off.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/project/items/off.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/project/items/off.png" alt="" />
+      </figure>
+    </main>
+    <div>
+      <input onclick="On_Of()" type="checkbox" id="toggle-btn-1" />
+      <label for="toggle-btn-1"></label>
+    </div>
+    <script>
+      let img = document.querySelectorAll("img");
+      let off = document.getElementById("off");
+      console.log(off);
+      let On_Of = () => {
+        for (let bulb of img) {
+          console.log(bulb);
+          if (bulb.src.match("/project/items/off")) {
+            bulb.src = "/project/items/on.png";
+            off.style.color = "yellow";
+            off.innerText = "Bulb Is On";
+          } else {
+            bulb.src = "/project/items/off.png";
+            off.innerText = "Bulb Is Off";
+            off.style.color = "white";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

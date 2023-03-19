@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop</title>
+  </head>
+  <style>
+    body {
+      background-color: #6f98f1;
+    }
+    h1 {
+      font-size: 5rem;
+      text-align: center;
+    }
+    .img_box {
+      width: 10rem;
+      height: 10rem;
+      position: relative;
+      background-image: url("h.jpg");
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    .white_box {
+      position: relative;
+      left: 20rem;
+      width: 10rem;
+      height: 10rem;
+      border: 2px solid black;
+      display: inline-block;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .color1 {
+      background-color: white;
+    }
+  </style>
+  <body>
+    <h1>Drag and Drop</h1>
+    <div class="white_box">
+      <div class="img_box" draggable="true"></div>
+    </div>
+    <div class="white_box"></div>
+    <div class="white_box"></div>
+    <div class="white_box"></div>
+
+    <!-- ------------------------------------------------------------ -->
+
+    <script>
+      const white_box = document.getElementsByClassName("white_box");
+      const img_box = document.querySelector(".img_box");
+
+      // this is for img_box for drag and drop even_listener
+
+      img_box.addEventListener("dragstart", (e) => {
+        console.log("drag has been triggered");
+        e.target.className += " hold";
+        setTimeout(() => {
+          e.target.className = "hide";
+        }, 0);
+      });
+      img_box.addEventListener("dragend", (e) => {
+        console.log("drop has been triggered");
+        e.target.className = "img_box";
+      });
+
+      //   ---------------------------------------------
+
+      // this is for all White_box for drag and drop even_listener
+
+      for (let box of white_box) {
+        box.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+        box.addEventListener("dragenter", (e) => {
+          console.log("dragenter has been triggered");
+          e.target.className += " color1";
+        });
+        box.addEventListener("dragleave", (e) => {
+          console.log("dragleave has been triggered");
+          e.target.className = "white_box";
+        });
+        box.addEventListener("drop", (e) => {
+          console.log("drop has been triggered");
+          e.target.append(img_box);
+        });
+      }
+    </script>
+  </body>
+</html>

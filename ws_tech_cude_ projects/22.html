@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Lite</title>
+  </head>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    body {
+      background-image: url("https://png.pngtree.com/png-vector/20190725/ourmid/pngtree-traffic-light-icon-png-image_1609859.jpg");
+      background-repeat: no-repeat;
+      background-position: 31.5rem 5rem;
+    }
+    .main {
+      display: table;
+      border: 1px solid black;
+      background-color: white;
+      margin: auto;
+      margin-top: 7.5rem;
+      padding: 0rem 0.5rem;
+      border-radius: 0.5rem;
+    }
+    .light {
+      width: 50px;
+      height: 50px;
+      border-radius: 10rem;
+      background-color: black;
+      margin: 2px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+    </div>
+
+    <script>
+      let light = document.getElementsByClassName("light");
+      cArry = ["Red", "Yellow", "Green"];
+      let i = 0;
+      let traffic = () => {
+        for (var j = 0; j < light.length; j++) {
+          console.log(light[j]);
+          light[j].style.background = "black";
+        }
+        light[i].style.background = cArry[i];
+        if (i < light.length) {
+          i++;
+        }
+        if (i == 3) {
+          i = 0;
+        }
+      };
+
+      setInterval(traffic, 1000);
+    </script>
+  </body>
+</html>

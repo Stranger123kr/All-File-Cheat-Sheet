@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    body {
+      background-color: #3498db;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    .main {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    #box {
+      width: 40%;
+      max-height: 300px;
+      box-shadow: 0px 0px 5px gray;
+      background-color: white;
+      border-radius: 1rem;
+      padding: 15px;
+      position: relative;
+      bottom: 6rem;
+    }
+
+    .row {
+      width: 100%;
+      margin-top: 1rem;
+      margin-right: 0rem;
+    }
+    #btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 1rem;
+      background-color: #3498db;
+      margin-top: 0.8rem;
+      border: none;
+    }
+    .last,
+    h2,
+    h3 {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>Quiz App</h1>
+
+    <div class="main">
+      <div id="box">
+        <h2 id="quesBox">1)this is the dummy question</h2>
+        <div class="row">
+          <input id="option1" type="radio" value="a" name="option" />
+          <label for="option1">option 1</label>
+        </div>
+        <div class="row">
+          <input id="option2" type="radio" value="b" name="option" />
+          <label for="option2">option 2</label>
+        </div>
+        <div class="row">
+          <input id="option3" type="radio" value="c" name="option" />
+          <label for="option3">option 3</label>
+        </div>
+        <div class="row">
+          <input id="option4" type="radio" value="d" name="option" />
+          <label for="option4">option 4</label>
+        </div>
+        <button id="btn" onclick="submitQuiz()">Submit</button>
+      </div>
+    </div>
+
+    <script>
+      const question = [
+        {
+          question: "Which of The Following is a Markup Language?",
+          a: "Html",
+          b: "Css",
+          c: "JavaScript",
+          d: "React",
+          correct: "a",
+        },
+        {
+          question: "Which Year Was JavaScript Launched?",
+          a: "1996",
+          b: "1995",
+          c: "1994",
+          d: "none of this above",
+          correct: "b",
+        },
+        {
+          question: "What Does Css Stands For?",
+          a: "Hyper Text Markup Language",
+          b: "Cascading Style Sheet",
+          c: "Jason Object Notation",
+          d: "Applications Protocols Interface",
+          correct: "b",
+        },
+      ];
+
+      // -----------------------------------------------------------------------------
+
+      const quesBox = document.getElementById("quesBox");
+      const input = document.getElementsByTagName("input");
+      const btn = document.getElementById("btn");
+      const box = document.getElementById("box");
+      // ------------------------------------------------------------------
+      let total = question.length;
+      let right = 0,
+        wrong = 0;
+
+      let index = 0;
+
+      const load_question = () => {
+        if (index == total) {
+          return endQuiz();
+        }
+        reset();
+        const data = question[index];
+        quesBox.innerHTML = `${index + 1} ${data.question}`;
+        input[0].nextElementSibling.innerHTML = `${data.a}`;
+        input[1].nextElementSibling.innerHTML = `${data.b}`;
+        input[2].nextElementSibling.innerHTML = `${data.c}`;
+        input[3].nextElementSibling.innerHTML = `${data.d}`;
+      };
+
+      const submitQuiz = () => {
+        const data = question[index];
+        const ans = getAnswer();
+        if (ans == data.correct) {
+          right++;
+        } else {
+          wrong++;
+        }
+        index++;
+        load_question();
+        return;
+      };
+
+      const getAnswer = () => {
+        let answer;
+        Array.from(input).forEach((input) => {
+          if (input.checked) {
+            answer = input.value;
+          }
+        });
+        return answer;
+      };
+
+      let reset = () => {
+        Array.from(input).forEach((input) => {
+          if (input.checked) {
+            input.checked = false;
+          }
+        });
+      };
+
+      const endQuiz = () => {
+        box.innerHTML = `
+        <div id="last">
+        <h3>Thankyou for Playing</h3>
+        <h2>${right}/${total} are correct</h2>
+        </div>
+        `;
+      };
+
+      // initial call
+      load_question();
+    </script>
+  </body>
+</html>

@@ -154,7 +154,7 @@ b.style.color = "red"
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-7.   matches                          <----- It is used to check ;
+7.   matches                          <-----  It is used to check if element  match given css selector;
   
 
 example:
@@ -167,7 +167,7 @@ console.log(id1.matches(".fuck"))
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-8.  closest                             <----- It is used to;
+8.  closest                             <----- It is used to look for the nearest  ancestors that match given css                                                           selector  the element   itself   also  checked;
   
 
 example:
@@ -179,7 +179,8 @@ console.log(span1.closest(".box"))
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-8.  contains                             <----- It is used to;
+8.  contains                             <----- It is used to check the parent has particular child present or not 
+                                                            if child has present  it  will give you  true otherwise false;
   
 
 example:
@@ -207,7 +208,7 @@ console.log(id.innerHTML)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-10. outerHTML                                           <----- It is used to change an outerhtml of an element; for example
+10. outerHTML                                           <----- It is used to change an outerhtml of an element; for 
                                                                               you can also change an element liek h1 to h3
 
 example:
@@ -220,16 +221,264 @@ console.log(id.outerHTML)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-11.                                           <----- It is used to change an outerhtml of an element; for 
-                                                                                example  you can also change an element liek h1 to h3
+11. getAttribute                                           <----- It is used to change an outerhtml of an element
+                                                            
+
+example:
+
+<div id="first" class="Hey"> My Name Is Raj</div>
+
+let first = document.getElementById("first");
+console.log(first.getAttribute("class"));
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+12. hasAttribute                                           <----- It is used to chang
+                                                                             
 
 example:
 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+<div id="first" class="Hey"> My Name Is Raj</div>
+
+let first = document.getElementById("first");
+console.log(first.hasAttribute("class"));
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+13. setAttribute                                           <----- It is used to chang
+                                                                             
+
+
+example:1
+
+<div id="first" class="Hey"> My Name Is Raj</div>
+
+let first = document.getElementById("first");
+console.log(first.setAttribute("hidden", "true"));
+
+
+example:2
+
+<div id="first" class="Hey"> My Name Is Raj</div>
+
+let first = document.getElementById("first");
+console.log(first.setAttribute("class", "true Nitesh"));
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+14. removeAttribute                                           <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div id="first" class="Hey"> My Name Is Raj</div>
+
+let first = document.getElementById("first");
+console.log(first.removeAttribute("class"));
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+15. data-anyname                                            <----- It is used to chang
+                                                                             
+
+example:
+
+
+ <div id="first" class="Hey" data-game="god of war" data-player="kratos" > My Name Is Raj</div>
+
+let first = document.getElementById("first");
+console.log(first.dataset);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+16. appendChild                                          <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div class="container">
+    <div class="first">Hey I Am Not a Hacker</div>
+</div>
+
+
+
+let first  = document.getElementsByClassName("first")[0];
+
+let div = document.createElement("h1");
+div.innerHTML = "fuck off"
+first.appendChild(div)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. remove()                                          <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div class="container">
+        <div class="first">I am the first element</div>
+</div>
+
+
+let first = document.getElementsByClassName("first")[0];
+first.remove()
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18. className                                          <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div class="container">
+        <div class="first">I am the first element</div>
+</div>
+
+
+let put  = document.getElementsByClassName("first")[0];
+put.className = "blue  font"
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. classList.add                                          <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div class="container">
+        <div class="first">I am the first element</div>
+</div>
+
+
+let put  = document.getElementsByClassName("first")[0];
+put.classList.add("red");
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. classList.remove                                          <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div class="container">
+        <div class="first">I am the first element</div>
+</div>
+
+
+let put  = document.getElementsByClassName("first")[0];
+put.classList.remove("red");
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+21. classList.toggle                                          <----- It is used to chang
+                                                                             
+
+example:
+
+
+<div class="container">
+        <div class="first">I am the first element</div>
+</div>
+
+
+let put  = document.getElementsByClassName("first")[0];
+put.classList.toggle("red");
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22. onclick                                           <----- It is used to chang
+                                                                             
+
+example: 1
+
+<button onclick="alert('Hello ji')">Click me</button>
+
+
+example: 2
+
+<button onclick="put()">Click me</button>
+
+let put=()=>{
+
+    console.log("Good")
+}
+
+
+example: 3
+
+
+
+<button>Click me</button>
+
+
+
+let but = document.querySelector("button");
+
+but.onclick=()=>{
+
+    console.log("pop out")
+};
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23. addEventListener()                                           <----- It is used to chang
+                                                                             
+
+example:
+
+
+<button>Click me</button>
+
+
+let but = document.querySelector("button");
+ but.addEventListener("click", () => {
+        alert("hello ji my name is nitesh")
+    });
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+24. removeEventListener()                                           <----- It is used to chang
+                                                                             
+
+example:
+
+
+let but = document.querySelector("button");
+
+
+but.addEventListener("click",);
+let x = () => {
+        alert("hello ji my name is nitesh")
+}
+
+
+but.removeEventListener("click", (x) => {
+
+})
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------

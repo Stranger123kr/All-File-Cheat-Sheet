@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css"
+      integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Notes App</title>
+  </head>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    body {
+      background-color: #c3f8ff;
+    }
+    #main {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100vh;
+    }
+    .note {
+      width: 380px;
+      height: 400px;
+      background-color: white;
+      margin: 5rem 2rem;
+      position: relative;
+    }
+    .tool {
+      width: 100%;
+      height: 40px;
+      background-color: rgb(165, 9, 9);
+    }
+    i {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+    }
+    #left {
+      color: white;
+      margin: 0rem 2rem;
+      font-size: 1.3rem;
+    }
+    #right {
+      color: white;
+      font-size: 1.3rem;
+    }
+    textarea {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      resize: none;
+      font-size: 1.5rem;
+      font-weight: 800;
+      padding: 0.5rem 1rem;
+      background-color: #fff6bf;
+    }
+    #add_btn {
+      position: fixed;
+      top: 0.5rem;
+      right: 4rem;
+      background-color: #fff6bf;
+      padding: 1.5rem 4.8rem;
+      border: none;
+      box-shadow: 0rem 0rem 0.2rem rgba(0, 0, 0, 0.507);
+      border-radius: 0.5rem;
+    }
+    #add {
+      font-size: 1.3rem;
+      font-weight: 800;
+      top: 0.8rem;
+      right: 1rem;
+    }
+  </style>
+  <body>
+    <button id="add_btn">
+      <i id="add" class="fas fa-plus"> Add Notes</i>
+    </button>
+    <div id="main"></div>
+
+    <script>
+      let Add = document.getElementById("add_btn");
+      let main = document.querySelector("#main");
+
+      // ---------------------------------------------------
+      let save_Note = () => {
+        let notes = document.querySelectorAll(".note textarea");
+        let data = [];
+        notes.forEach((note) => {
+          data.push(note.value);
+        });
+
+        if (data.length === 0) {
+          localStorage.removeItem("notes");
+        } else {
+          localStorage.setItem("notes", JSON.stringify(data));
+        }
+      };
+
+      Add.addEventListener("click", () => {
+        add_note();
+      });
+
+      let add_note = (text = "") => {
+        let note = document.createElement("div");
+        note.classList.add("note");
+        note.innerHTML = `
+        <div class="tool">
+          <i id="left" class="fas fa-save"></i>
+          <i id="right" class="fas fa-trash"></i>
+        </div>
+        <textarea>${text}</textarea>
+        `;
+        note.querySelector("#right").addEventListener("click", () => {
+          note.remove();
+          save_Note();
+        });
+        note.querySelector("#left").addEventListener("click", () => {
+          save_Note();
+        });
+        note.querySelector("textarea").addEventListener("focusout", () => {
+          save_Note();
+        });
+        main.append(note);
+        save_Note();
+      };
+
+      (function () {
+        const ls_notes = JSON.parse(localStorage.getItem("notes"));
+        if (ls_notes === null) {
+          add_note();
+        } else {
+          ls_notes.forEach((ls_notes) => {
+            add_note(ls_notes);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

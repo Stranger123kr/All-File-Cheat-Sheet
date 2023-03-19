@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+
+    .main {
+      width: 100%;
+      min-height: 100vh;
+      background-color: black;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      margin-top: 3rem;
+      padding: 10px;
+      width: 25%;
+      flex-basis: 25%;
+      height: 400px;
+      border-radius: 5px;
+      overflow: hidden;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .box img {
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+    }
+
+    .box .overlay {
+      width: 100%;
+      max-height: 100%;
+      min-height: auto;
+      position: absolute;
+      bottom: -100%;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px 10px 0px 0px;
+      left: 0;
+      transition: 0.5s;
+      background-color: white;
+    }
+
+    .box span {
+      color: orange;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box:hover .overlay {
+      bottom: 0%;
+    }
+
+    .overlay h2 {
+      margin-bottom: 10px;
+    }
+
+    #search {
+      width: 500px;
+      padding: 5px 30px;
+      background-color: rgba(52, 73, 94, 0.7);
+      outline: none;
+      border: none;
+      box-shadow: 0px 0px 1px white;
+      color: White;
+      margin-top: 10px;
+      font-size: 30px;
+      border-radius: 25px;
+      transition: 1s;
+      margin-bottom: 15px;
+    }
+
+    #search:focus {
+      background-color: white;
+      color: black;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="row" style="justify-content: center">
+        <input
+          type="search"
+          id="search"
+          autofocus
+          autocomplete="off"
+          placeholder="Search here..."
+        />
+      </div>
+      <div class="row" id="movie_box"></div>
+    </div>
+
+    <script>
+      const API_URL =
+        "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+
+      // get latest movies
+
+      const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
+
+      // get img
+
+      const SEARCH_API =
+        "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+
+      // get search movies
+
+      const movie_box = document.getElementById("movie_box");
+      const search = document.getElementById("search");
+
+      // --------------------------------------------------------
+
+      async function getMovies(api) {
+        try {
+          const response = await fetch(api);
+          const json_data = await response.json();
+          show_movies(json_data.results);
+        } catch (error) {
+          console.log(error + " This is an error fix your mistake");
+        }
+      }
+
+      const show_movies = (data) => {
+        let html = " "; // reset old data to new data
+        data.forEach((item) => {
+          html += `
+        <div class="box">
+        <img src="${IMG_PATH + item.poster_path}" alt="" />
+        <div class="overlay">
+          <div class="title">
+            <h2>${item.title}</h2>
+            <span>${item.vote_average}</span>
+            </div>
+            <span>release date : ${item.release_date}</span>
+          <h3>Overview:</h3>
+          <p>${item.overview}</p>
+        </div>
+      </div>
+       `;
+        });
+        movie_box.innerHTML = html;
+      };
+
+      search.addEventListener("keyup", () => {
+        if (search.value !== "") {
+          getMovies(SEARCH_API + search.value);
+          console.log(SEARCH_API);
+        } else {
+          getMovies(API_URL);
+        }
+      });
+
+      // initial call
+      getMovies(API_URL);
+    </script>
+  </body>
+</html>
