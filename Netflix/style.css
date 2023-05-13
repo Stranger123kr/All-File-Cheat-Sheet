@@ -46,6 +46,20 @@ a {
   --color_change_btn: #000;
 }
 
+/* ===== this is a mode to change a color according to your windows color mod ====== */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary_color: #ffe500;
+    --main_color: #000;
+    --rgba_color: rgba(192, 192, 192, 0.7);
+    --top_head_color: #000;
+    --select_btn: rgba(55, 55, 55, 0.7);
+    --change_color: #000;
+    --color_change_btn: #000;
+  }
+} */
+
 /* ========================================= white_mod effect  ====================================== */
 
 .white_mod {
@@ -536,5 +550,9 @@ label::after {
 
   .content p {
     font-size: 0.9rem;
+  }
+
+  .header {
+    background-size: 70rem;
   }
 }
